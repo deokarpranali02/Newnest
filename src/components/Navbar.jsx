@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+ HEAD
 import { useEffect, useState } from "react";
 
 function Navbar({ onSearch }) {
