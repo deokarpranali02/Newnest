@@ -16,7 +16,7 @@ function Home() {
       setLoading(true);
 
       const response = await fetch(
-        `http://localhost:8081/search?q=${query}`
+        `https://newnest.onrender.com/search?q=${query}`
       );
 
       const data = await response.json();
@@ -328,23 +328,17 @@ function Home() {
 
               <div className="col-span-full flex flex-col items-center justify-center py-20 text-center">
 
-                {/* Icon */}
-
                 <div className="text-6xl mb-6 animate-bounce">
 
                   📰
 
                 </div>
 
-                {/* Heading */}
-
                 <h1 className="text-3xl sm:text-5xl font-black gradient-text">
 
                   No News Available
 
                 </h1>
-
-                {/* Subtitle */}
 
                 <p className="text-gray-400 mt-5 text-sm sm:text-lg max-w-2xl leading-8 px-4">
 
@@ -354,8 +348,6 @@ function Home() {
                   or refresh the page.
 
                 </p>
-
-                {/* Retry Button */}
 
                 <button
                   onClick={() => searchNews("technology")}
