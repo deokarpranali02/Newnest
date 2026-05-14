@@ -43,6 +43,8 @@ function Home() {
 
       console.log(error);
 
+      setArticles([]);
+
     } finally {
 
       setLoading(false);
@@ -61,256 +63,257 @@ function Home() {
 
     <div className="min-h-screen relative overflow-hidden bg-[#04130f] aurora">
 
-      {/* Fixed Navbar */}
+      {/* Navbar */}
 
-      <div className="fixed top-0 left-0 w-full z-50">
+      <Navbar onSearch={searchNews} />
 
-        <Navbar onSearch={searchNews} />
+      {/* Breaking News */}
+
+      <div className="bg-gradient-to-r from-emerald-500 via-cyan-500 to-teal-400 text-white py-3 overflow-hidden whitespace-nowrap shadow-2xl">
+
+        <div className="animate-marquee inline-block font-semibold tracking-wider text-sm md:text-base">
+
+          🌍 LIVE GLOBAL NEWS • AI BREAKTHROUGH • WORLD ECONOMY • IPL 2026 • NASA SPACE MISSIONS • TECH STARTUPS • CYBER SECURITY • FUTURE OF AI 🚀
+
+        </div>
 
       </div>
 
-      {/* Space For Fixed Navbar */}
+      {/* Main */}
 
-      <div className="pt-28">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-10">
 
-        {/* Breaking News */}
+        {/* Hero */}
 
-        <div className="relative z-10 bg-gradient-to-r from-emerald-500 via-cyan-500 to-teal-400 text-white py-3 overflow-hidden whitespace-nowrap shadow-2xl">
+        <div className="text-center mb-20 hero-text">
 
-          <div className="animate-marquee inline-block font-semibold tracking-wider text-sm md:text-base">
+          {/* Live Global Button */}
 
-            🌍 LIVE GLOBAL NEWS • AI BREAKTHROUGH • WORLD ECONOMY • IPL 2026 • NASA SPACE MISSIONS • TECH STARTUPS • CYBER SECURITY • FUTURE OF AI 🚀
+          <button
+            onClick={() => searchNews("world")}
+            className="glass glow live-btn px-7 sm:px-10 py-3 sm:py-4 rounded-full mb-10 text-xs sm:text-sm md:text-base font-bold tracking-[3px] uppercase transition duration-500"
+          >
+
+            🌍 Live Global Feed
+
+          </button>
+
+          {/* Heading */}
+
+          <div className="relative inline-block">
+
+            <div className="absolute inset-0 blur-[120px] opacity-30 bg-emerald-400 rounded-full"></div>
+
+            <h1 className="text-5xl sm:text-6xl md:text-8xl font-black leading-tight tracking-tight relative z-10">
+
+              <span className="block text-white mb-3 future-text">
+
+                FUTURE OF
+
+              </span>
+
+              <span className="block gradient-text futuristic-title">
+
+                NEWSNEST
+
+              </span>
+
+            </h1>
+
+          </div>
+
+          {/* Subtitle */}
+
+          <p className="hero-subtitle text-gray-300 text-sm sm:text-lg md:text-2xl max-w-5xl mx-auto mt-8 leading-8 sm:leading-10 font-light px-2">
+
+            Step into the next generation of digital journalism with
+            immersive live coverage,
+            AI-powered discovery,
+            futuristic storytelling,
+            and real-time global news experiences.
+
+          </p>
+
+          {/* Stats */}
+
+          <div className="grid grid-cols-3 gap-3 sm:gap-8 mt-14 max-w-5xl mx-auto">
+
+            {/* Box 1 */}
+
+            <div className="glass glow stat-box px-3 sm:px-10 py-5 sm:py-8 rounded-[25px] sm:rounded-[35px] text-center">
+
+              <h2 className="text-2xl sm:text-5xl font-black gradient-text stat-number">
+
+                24/7
+
+              </h2>
+
+              <p className="text-gray-300 mt-2 sm:mt-3 text-[11px] sm:text-lg tracking-wide leading-4 sm:leading-normal">
+
+                Live Coverage
+
+              </p>
+
+            </div>
+
+            {/* Box 2 */}
+
+            <div className="glass glow stat-box px-3 sm:px-10 py-5 sm:py-8 rounded-[25px] sm:rounded-[35px] text-center">
+
+              <h2 className="text-2xl sm:text-5xl font-black gradient-text stat-number">
+
+                AI
+
+              </h2>
+
+              <p className="text-gray-300 mt-2 sm:mt-3 text-[11px] sm:text-lg tracking-wide leading-4 sm:leading-normal">
+
+                Smart Discovery
+
+              </p>
+
+            </div>
+
+            {/* Box 3 */}
+
+            <div className="glass glow stat-box px-3 sm:px-10 py-5 sm:py-8 rounded-[25px] sm:rounded-[35px] text-center">
+
+              <h2 className="text-2xl sm:text-5xl font-black gradient-text stat-number">
+
+                Global
+
+              </h2>
+
+              <p className="text-gray-300 mt-2 sm:mt-3 text-[11px] sm:text-lg tracking-wide leading-4 sm:leading-normal">
+
+                Trending Topics
+
+              </p>
+
+            </div>
 
           </div>
 
         </div>
 
-        {/* Main */}
+        {/* Categories */}
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-10">
+        <div className="flex flex-wrap justify-center gap-4 mb-16">
 
-          {/* Hero */}
-
-          <div className="text-center mb-20 hero-text">
-
-            {/* Live Global Button */}
-
-            <button
-              onClick={() => searchNews("world")}
-              className="glass glow live-btn px-7 sm:px-10 py-3 sm:py-4 rounded-full mb-10 text-xs sm:text-sm md:text-base font-bold tracking-[3px] uppercase transition duration-500"
-            >
-
-              🌍 Live Global Feed
-
-            </button>
-
-            {/* Heading */}
-
-            <div className="relative inline-block">
-
-              <div className="absolute inset-0 blur-[120px] opacity-30 bg-emerald-400 rounded-full"></div>
-
-              <h1 className="text-5xl sm:text-6xl md:text-8xl font-black leading-tight tracking-tight relative z-10">
-
-                <span className="block text-white mb-3 future-text">
-
-                  FUTURE OF
-
-                </span>
-
-                <span className="block gradient-text futuristic-title">
-
-                  NEWSNEST
-
-                </span>
-
-              </h1>
-
-            </div>
-
-            {/* Subtitle */}
-
-            <p className="hero-subtitle text-gray-300 text-sm sm:text-lg md:text-2xl max-w-5xl mx-auto mt-8 leading-8 sm:leading-10 font-light px-2">
-
-              Step into the next generation of digital journalism with
-              immersive live coverage,
-              AI-powered discovery,
-              futuristic storytelling,
-              and real-time global news experiences.
-
-            </p>
-
-            {/* Stats */}
-
-            <div className="grid grid-cols-3 gap-3 sm:gap-8 mt-14 max-w-5xl mx-auto">
-
-              {/* Box 1 */}
-
-              <div className="glass glow stat-box px-3 sm:px-10 py-5 sm:py-8 rounded-[25px] sm:rounded-[35px] text-center">
-
-                <h2 className="text-2xl sm:text-5xl font-black gradient-text stat-number">
-
-                  24/7
-
-                </h2>
-
-                <p className="text-gray-300 mt-2 sm:mt-3 text-[11px] sm:text-lg tracking-wide leading-4 sm:leading-normal">
-
-                  Live Coverage
-
-                </p>
-
-              </div>
-
-              {/* Box 2 */}
-
-              <div className="glass glow stat-box px-3 sm:px-10 py-5 sm:py-8 rounded-[25px] sm:rounded-[35px] text-center">
-
-                <h2 className="text-2xl sm:text-5xl font-black gradient-text stat-number">
-
-                  AI
-
-                </h2>
-
-                <p className="text-gray-300 mt-2 sm:mt-3 text-[11px] sm:text-lg tracking-wide leading-4 sm:leading-normal">
-
-                  Smart Discovery
-
-                </p>
-
-              </div>
-
-              {/* Box 3 */}
-
-              <div className="glass glow stat-box px-3 sm:px-10 py-5 sm:py-8 rounded-[25px] sm:rounded-[35px] text-center">
-
-                <h2 className="text-2xl sm:text-5xl font-black gradient-text stat-number">
-
-                  Global
-
-                </h2>
-
-                <p className="text-gray-300 mt-2 sm:mt-3 text-[11px] sm:text-lg tracking-wide leading-4 sm:leading-normal">
-
-                  Trending Topics
-
-                </p>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          {/* Categories */}
-
-          <div className="flex flex-wrap justify-center gap-4 mb-16">
-
-            <button
-              onClick={() => searchNews("technology")}
-              className="glass glow px-5 sm:px-7 py-3 sm:py-4 rounded-2xl text-sm sm:text-base font-bold hover:scale-110 transition duration-300"
-            >
-
-              ⚡ Technology
-
-            </button>
-
-            <button
-              onClick={() => searchNews("sports")}
-              className="glass glow px-5 sm:px-7 py-3 sm:py-4 rounded-2xl text-sm sm:text-base font-bold hover:scale-110 transition duration-300"
-            >
-
-              🏆 Sports
-
-            </button>
-
-            <button
-              onClick={() => searchNews("business")}
-              className="glass glow px-5 sm:px-7 py-3 sm:py-4 rounded-2xl text-sm sm:text-base font-bold hover:scale-110 transition duration-300"
-            >
-
-              💼 Business
-
-            </button>
-
-            <button
-              onClick={() => searchNews("health")}
-              className="glass glow px-5 sm:px-7 py-3 sm:py-4 rounded-2xl text-sm sm:text-base font-bold hover:scale-110 transition duration-300"
-            >
-
-              ❤️ Health
-
-            </button>
-
-            <button
-              onClick={() => searchNews("entertainment")}
-              className="glass glow px-5 sm:px-7 py-3 sm:py-4 rounded-2xl text-sm sm:text-base font-bold hover:scale-110 transition duration-300"
-            >
-
-              🎬 Entertainment
-
-            </button>
-
-            <button
-              onClick={() => searchNews("science")}
-              className="glass glow px-5 sm:px-7 py-3 sm:py-4 rounded-2xl text-sm sm:text-base font-bold hover:scale-110 transition duration-300"
-            >
-
-              🚀 Science
-
-            </button>
-
-            <button
-              onClick={() => searchNews("world")}
-              className="glass glow px-5 sm:px-7 py-3 sm:py-4 rounded-2xl text-sm sm:text-base font-bold hover:scale-110 transition duration-300"
-            >
-
-              🌍 World
-
-            </button>
-
-          </div>
-
-          {/* News Heading */}
-
-          <div
-            id="news-section"
-            className="mb-10 text-center"
+          <button
+            onClick={() => searchNews("technology")}
+            className="glass glow px-5 sm:px-7 py-3 sm:py-4 rounded-2xl text-sm sm:text-base font-bold hover:scale-110 transition duration-300"
           >
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black gradient-text">
+            ⚡ Technology
 
-              Latest News Feed
+          </button>
 
-            </h2>
+          <button
+            onClick={() => searchNews("sports")}
+            className="glass glow px-5 sm:px-7 py-3 sm:py-4 rounded-2xl text-sm sm:text-base font-bold hover:scale-110 transition duration-300"
+          >
 
-            <p className="text-gray-400 mt-3 text-sm sm:text-lg">
+            🏆 Sports
 
-              Real-time stories from around the world
+          </button>
 
-            </p>
+          <button
+            onClick={() => searchNews("business")}
+            className="glass glow px-5 sm:px-7 py-3 sm:py-4 rounded-2xl text-sm sm:text-base font-bold hover:scale-110 transition duration-300"
+          >
+
+            💼 Business
+
+          </button>
+
+          <button
+            onClick={() => searchNews("health")}
+            className="glass glow px-5 sm:px-7 py-3 sm:py-4 rounded-2xl text-sm sm:text-base font-bold hover:scale-110 transition duration-300"
+          >
+
+            ❤️ Health
+
+          </button>
+
+          <button
+            onClick={() => searchNews("entertainment")}
+            className="glass glow px-5 sm:px-7 py-3 sm:py-4 rounded-2xl text-sm sm:text-base font-bold hover:scale-110 transition duration-300"
+          >
+
+            🎬 Entertainment
+
+          </button>
+
+          <button
+            onClick={() => searchNews("science")}
+            className="glass glow px-5 sm:px-7 py-3 sm:py-4 rounded-2xl text-sm sm:text-base font-bold hover:scale-110 transition duration-300"
+          >
+
+            🚀 Science
+
+          </button>
+
+          <button
+            onClick={() => searchNews("world")}
+            className="glass glow px-5 sm:px-7 py-3 sm:py-4 rounded-2xl text-sm sm:text-base font-bold hover:scale-110 transition duration-300"
+          >
+
+            🌍 World
+
+          </button>
+
+        </div>
+
+        {/* News Heading */}
+
+        <div
+          id="news-section"
+          className="mb-10 text-center"
+        >
+
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black gradient-text">
+
+            Latest News Feed
+
+          </h2>
+
+          <p className="text-gray-400 mt-3 text-sm sm:text-lg">
+
+            Real-time stories from around the world
+
+          </p>
+
+        </div>
+
+        {/* Loading */}
+
+        {loading && (
+
+          <div className="text-center text-cyan-400 text-xl mb-10 animate-pulse">
+
+            Loading News...
 
           </div>
 
-          {/* Loading */}
+        )}
 
-          {loading && (
+        {/* News Grid */}
 
-            <div className="text-center text-cyan-400 text-xl mb-10 animate-pulse">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7">
 
-              Loading News...
+          {articles &&
+          Array.isArray(articles) &&
+          articles.filter((article) => article.title).length > 0 ? (
 
-            </div>
+            articles
+              .filter(
+                (article) =>
+                  article.title &&
+                  article.description
+              )
 
-          )}
-
-          {/* News Grid */}
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7">
-
-            {articles.length > 0 ? (
-
-              articles.map((article, index) => (
+              .map((article, index) => (
 
                 <NewsCard
                   key={index}
@@ -319,21 +322,56 @@ function Home() {
 
               ))
 
-            ) : (
+          ) : (
 
-              !loading && (
+            !loading && (
 
-                <h1 className="text-white text-2xl text-center col-span-full">
+              <div className="col-span-full flex flex-col items-center justify-center py-20 text-center">
 
-                  No News Found 😢
+                {/* Icon */}
+
+                <div className="text-6xl mb-6 animate-bounce">
+
+                  📰
+
+                </div>
+
+                {/* Heading */}
+
+                <h1 className="text-3xl sm:text-5xl font-black gradient-text">
+
+                  No News Available
 
                 </h1>
 
-              )
+                {/* Subtitle */}
 
-            )}
+                <p className="text-gray-400 mt-5 text-sm sm:text-lg max-w-2xl leading-8 px-4">
 
-          </div>
+                  We could not find any news articles right now.
+                  Try another category,
+                  search a different keyword,
+                  or refresh the page.
+
+                </p>
+
+                {/* Retry Button */}
+
+                <button
+                  onClick={() => searchNews("technology")}
+
+                  className="mt-8 glass glow px-7 py-3 rounded-2xl font-bold hover:scale-105 transition duration-300"
+                >
+
+                  Reload News
+
+                </button>
+
+              </div>
+
+            )
+
+          )}
 
         </div>
 
