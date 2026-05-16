@@ -16,8 +16,8 @@ function Home() {
       setLoading(true);
 
       const response = await fetch(
-        `http://localhost:8081/search?q=${query}`
-      );
+  `https://newnest.onrender.com/search?q=${query}`
+);
 
       const data = await response.json();
 
