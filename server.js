@@ -8,7 +8,21 @@ app.use(cors());
 
 const PORT = process.env.PORT || 8081;
 
-const API_KEY = "4cf7b9a807534b2aa4fc0fa9b8c85446";;
+// API KEY
+
+const API_KEY =
+  process.env.NEWS_API_KEY ||
+  "4cf7b9a807534b2aa4fc0fa9b8c85446";
+
+// Home Route
+
+app.get("/", (req, res) => {
+
+  res.send("NewsNest Backend Running 🚀");
+
+});
+
+// Search News Route
 
 app.get("/search", async (req, res) => {
 
@@ -23,6 +37,7 @@ app.get("/search", async (req, res) => {
           q: query,
           language: "en",
           sortBy: "publishedAt",
+          pageSize: 40,
           apiKey: API_KEY
         }
       }
@@ -42,4 +57,14 @@ app.get("/search", async (req, res) => {
         "Failed to fetch news"
     });
   }
+});
+
+// Start Server
+
+app.listen(PORT, () => {
+
+  console.log(
+    `Server running on port ${PORT}`
+  );
+
 });
