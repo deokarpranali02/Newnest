@@ -16,7 +16,7 @@ function Home() {
       setLoading(true);
 
       const response = await fetch(
-        `https://newnest.onrender.com/search?q=${query}`
+        `http://localhost:8081/search?q=${query}`
       );
 
       const data = await response.json();
@@ -42,8 +42,6 @@ function Home() {
     } catch (error) {
 
       console.log(error);
-
-      setArticles([]);
 
     } finally {
 
@@ -85,116 +83,114 @@ function Home() {
 
         {/* Hero */}
 
-        <div className="text-center mb-20 hero-text">
+<div className="text-center mb-20 hero-text">
 
-          {/* Live Global Button */}
+  {/* Live Global Button */}
 
-          <button
-            onClick={() => searchNews("world")}
-            className="glass glow live-btn px-7 sm:px-10 py-3 sm:py-4 rounded-full mb-10 text-xs sm:text-sm md:text-base font-bold tracking-[3px] uppercase transition duration-500"
-          >
+  <button
+    onClick={() => searchNews("world")}
+    className="glass glow live-btn px-7 sm:px-10 py-3 sm:py-4 rounded-full mb-10 text-xs sm:text-sm md:text-base font-bold tracking-[3px] uppercase transition duration-500"
+  >
 
-            🌍 Live Global Feed
+    🌍 Live Global Feed
 
-          </button>
+  </button>
 
-          {/* Heading */}
+  {/* Heading */}
 
-          <div className="relative inline-block">
+  <div className="relative inline-block">
 
-            <div className="absolute inset-0 blur-[120px] opacity-30 bg-emerald-400 rounded-full"></div>
+    {/* Glow Background */}
 
-            <h1 className="text-5xl sm:text-6xl md:text-8xl font-black leading-tight tracking-tight relative z-10">
+    <div className="absolute inset-0 blur-[120px] opacity-40 bg-emerald-400 rounded-full"></div>
 
-              <span className="block text-white mb-3 future-text">
+    {/* Main Title */}
 
-                FUTURE OF
+    <h1 className="text-5xl sm:text-6xl md:text-8xl font-black leading-tight relative z-10">
 
-              </span>
+      <span className="block gradient-text futuristic-title uppercase tracking-[12px] sm:tracking-[18px]">
 
-              <span className="block gradient-text futuristic-title">
+        NEWSNEST
 
-                NEWSNEST
+      </span>
 
-              </span>
+    </h1>
 
-            </h1>
+  </div>
 
-          </div>
+  {/* Subtitle */}
 
-          {/* Subtitle */}
+  <p className="hero-subtitle text-gray-300 text-sm sm:text-lg md:text-2xl max-w-5xl mx-auto mt-8 leading-8 sm:leading-10 font-light px-2">
 
-          <p className="hero-subtitle text-gray-300 text-sm sm:text-lg md:text-2xl max-w-5xl mx-auto mt-8 leading-8 sm:leading-10 font-light px-2">
+    Step into the next generation of digital journalism with
+    immersive live coverage,
+    AI-powered discovery,
+    futuristic storytelling,
+    and real-time global news experiences.
 
-            Step into the next generation of digital journalism with
-            immersive live coverage,
-            AI-powered discovery,
-            futuristic storytelling,
-            and real-time global news experiences.
+  </p>
 
-          </p>
+  {/* Stats */}
 
-          {/* Stats */}
+  <div className="grid grid-cols-3 gap-3 sm:gap-8 mt-14 max-w-5xl mx-auto">
 
-          <div className="grid grid-cols-3 gap-3 sm:gap-8 mt-14 max-w-5xl mx-auto">
+    {/* Box 1 */}
 
-            {/* Box 1 */}
+    <div className="glass glow stat-box px-3 sm:px-10 py-5 sm:py-8 rounded-[25px] sm:rounded-[35px] text-center">
 
-            <div className="glass glow stat-box px-3 sm:px-10 py-5 sm:py-8 rounded-[25px] sm:rounded-[35px] text-center">
+      <h2 className="text-2xl sm:text-5xl font-black gradient-text stat-number">
 
-              <h2 className="text-2xl sm:text-5xl font-black gradient-text stat-number">
+        24/7
 
-                24/7
+      </h2>
 
-              </h2>
+      <p className="text-gray-300 mt-2 sm:mt-3 text-[11px] sm:text-lg tracking-wide leading-4 sm:leading-normal">
 
-              <p className="text-gray-300 mt-2 sm:mt-3 text-[11px] sm:text-lg tracking-wide leading-4 sm:leading-normal">
+        Live Coverage
 
-                Live Coverage
+      </p>
 
-              </p>
+    </div>
 
-            </div>
+    {/* Box 2 */}
 
-            {/* Box 2 */}
+    <div className="glass glow stat-box px-3 sm:px-10 py-5 sm:py-8 rounded-[25px] sm:rounded-[35px] text-center">
 
-            <div className="glass glow stat-box px-3 sm:px-10 py-5 sm:py-8 rounded-[25px] sm:rounded-[35px] text-center">
+      <h2 className="text-2xl sm:text-5xl font-black gradient-text stat-number">
 
-              <h2 className="text-2xl sm:text-5xl font-black gradient-text stat-number">
+        AI
 
-                AI
+      </h2>
 
-              </h2>
+      <p className="text-gray-300 mt-2 sm:mt-3 text-[11px] sm:text-lg tracking-wide leading-4 sm:leading-normal">
 
-              <p className="text-gray-300 mt-2 sm:mt-3 text-[11px] sm:text-lg tracking-wide leading-4 sm:leading-normal">
+        Smart Discovery
 
-                Smart Discovery
+      </p>
 
-              </p>
+    </div>
 
-            </div>
+    {/* Box 3 */}
 
-            {/* Box 3 */}
+    <div className="glass glow stat-box px-3 sm:px-10 py-5 sm:py-8 rounded-[25px] sm:rounded-[35px] text-center">
 
-            <div className="glass glow stat-box px-3 sm:px-10 py-5 sm:py-8 rounded-[25px] sm:rounded-[35px] text-center">
+      <h2 className="text-2xl sm:text-5xl font-black gradient-text stat-number">
 
-              <h2 className="text-2xl sm:text-5xl font-black gradient-text stat-number">
+        Global
 
-                Global
+      </h2>
 
-              </h2>
+      <p className="text-gray-300 mt-2 sm:mt-3 text-[11px] sm:text-lg tracking-wide leading-4 sm:leading-normal">
 
-              <p className="text-gray-300 mt-2 sm:mt-3 text-[11px] sm:text-lg tracking-wide leading-4 sm:leading-normal">
+        Trending Topics
 
-                Trending Topics
+      </p>
 
-              </p>
+    </div>
 
-            </div>
+  </div>
 
-          </div>
-
-        </div>
+</div>
 
         {/* Categories */}
 
@@ -302,64 +298,26 @@ function Home() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7">
 
-          {articles &&
-          Array.isArray(articles) &&
-          articles.filter((article) => article.title).length > 0 ? (
+          {articles.length > 0 ? (
 
-            articles
-              .filter(
-                (article) =>
-                  article.title &&
-                  article.description
-              )
+            articles.map((article, index) => (
 
-              .map((article, index) => (
+              <NewsCard
+                key={index}
+                article={article}
+              />
 
-                <NewsCard
-                  key={index}
-                  article={article}
-                />
-
-              ))
+            ))
 
           ) : (
 
             !loading && (
 
-              <div className="col-span-full flex flex-col items-center justify-center py-20 text-center">
+              <h1 className="text-white text-2xl text-center col-span-full">
 
-                <div className="text-6xl mb-6 animate-bounce">
+                No News Found 😢
 
-                  📰
-
-                </div>
-
-                <h1 className="text-3xl sm:text-5xl font-black gradient-text">
-
-                  No News Available
-
-                </h1>
-
-                <p className="text-gray-400 mt-5 text-sm sm:text-lg max-w-2xl leading-8 px-4">
-
-                  We could not find any news articles right now.
-                  Try another category,
-                  search a different keyword,
-                  or refresh the page.
-
-                </p>
-
-                <button
-                  onClick={() => searchNews("technology")}
-
-                  className="mt-8 glass glow px-7 py-3 rounded-2xl font-bold hover:scale-105 transition duration-300"
-                >
-
-                  Reload News
-
-                </button>
-
-              </div>
+              </h1>
 
             )
 
